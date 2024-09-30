@@ -94,33 +94,30 @@
                             <th scope="col">Distance To Center</th>
                             </tr>
                         </thead>
+                        <?php
+                            foreach($hotels as $hotel) {
+                    
+                        ?>
                         <tbody>
                             <tr>
                             <th scope="row"><?php echo $hotel['name']; ?></th>
                             <td> <?php echo $hotel['description']; ?> </td>
                             <td><?php 
                                     if($hotel['parking']) {
-                                        echo '<span> ✓ <span/>';
+                                        echo '<span class="text-success"> ✓ <span/>';
                                     } 
                                     else {
-                                        echo '<span> ✗ <span/>';
+                                        echo '<span class="text-danger"> ✗ <span/>';
                                     }
                                 ?>
                             </td>
                             <td><?php echo $hotel['vote']; ?></td>
-                            <td><?php echo $hotel['distance_to_center']; ?></td>
+                            <td><?php echo $hotel['distance_to_center'].' '.'km'; ?></td>
                             </tr>
-                            <tr>
-                            <th scope="row"><?php echo $hotel['name']; ?></th>
-                            <td>  </td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
+                            
+                            <?php
+                                }
+                            ?>    
                         </tbody>
                     </table>
                 </div>
